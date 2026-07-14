@@ -1,6 +1,15 @@
-<<<<<<< HEAD
-# Experiment-Submission
-=======
-# Full-Stacks-Experiments
->>>>>>> 192e1252c24cd07bdf58e528885de590562a822a
-My Experiments
+# Full-Stack-Experiments
+
+This repository contains all of my Full Stack Development experiments.
+
+## Experiments
+
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+
+Each experiment is organized in its own folder.
