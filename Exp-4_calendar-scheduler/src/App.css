@@ -1,0 +1,559 @@
+/* =========================================
+   GLOBAL PAGE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #172033;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   MAIN APP CONTAINER
+========================================= */
+
+.app-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 35px 40px 60px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.app-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.app-header h1 {
+  margin: 0 0 12px;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  margin: 0;
+  color: #667085;
+  font-size: 17px;
+}
+
+
+/* =========================================
+   PERFORMANCE PANEL
+========================================= */
+
+.performance-panel {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.07);
+}
+
+.performance-panel h2 {
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.performance-description {
+  text-align: center;
+  color: #667085;
+  margin: 0 0 22px;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   MODE BUTTONS
+========================================= */
+
+.optimization-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mode-button {
+  border: 1px solid #d0d5dd;
+  background: #ffffff;
+  color: #344054;
+  padding: 11px 22px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.mode-button:hover {
+  background: #f2f4f7;
+  transform: translateY(-1px);
+}
+
+.mode-button.active {
+  background: #e8f7ee;
+  border-color: #16a34a;
+  color: #087a32;
+}
+
+.mode-button.active.non-optimized {
+  background: #fff0f0;
+  border-color: #dc2626;
+  color: #b42318;
+}
+
+
+/* =========================================
+   CURRENT MODE
+========================================= */
+
+.current-mode {
+  background: #f2f4f7;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 17px;
+}
+
+.optimized-text {
+  color: #087a32;
+  font-weight: 700;
+}
+
+.non-optimized-text {
+  color: #b42318;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   PERFORMANCE STATISTICS
+========================================= */
+
+.render-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 13px;
+  padding: 20px 15px;
+  text-align: center;
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.optimized-card {
+  border: 2px solid #16a34a;
+}
+
+.non-optimized-card {
+  border: 2px solid #dc2626;
+}
+
+
+/* =========================================
+   PERFORMANCE EXPLANATION
+========================================= */
+
+.comparison-info {
+  border-top: 1px solid #eaecf0;
+  padding-top: 20px;
+}
+
+.comparison-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.comparison-info p {
+  margin: 0;
+  color: #475467;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   SCHEDULER SECTION
+========================================= */
+
+.scheduler-section {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.06);
+}
+
+.scheduler-section h2 {
+  margin: 0 0 25px;
+  font-size: 26px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.schedule-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr 1fr auto;
+  gap: 18px;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #101828;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #667085;
+  box-shadow: 0 0 0 3px rgba(102, 112, 133, 0.12);
+}
+
+
+/* =========================================
+   SCHEDULE BUTTON
+========================================= */
+
+.schedule-button {
+  height: 45px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #172033;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.schedule-button:hover {
+  background: #344054;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   CALENDAR SECTION
+========================================= */
+
+.calendar-section {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.06);
+}
+
+.calendar-section h2 {
+  margin: 0 0 22px;
+  font-size: 26px;
+}
+
+
+/* =========================================
+   FULLCALENDAR
+========================================= */
+
+.fc {
+  font-size: 14px;
+}
+
+.fc .fc-toolbar {
+  margin-bottom: 20px;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.fc .fc-button {
+  background: #172033;
+  border-color: #172033;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+.fc .fc-button:hover {
+  background: #344054;
+  border-color: #344054;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background: #475467;
+  border-color: #475467;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #344054;
+  padding: 8px;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #475467;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.fc .fc-event {
+  border: none;
+  border-radius: 5px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.fc .fc-event-title {
+  font-weight: 600;
+}
+
+
+/* =========================================
+   POST LIST
+========================================= */
+
+.posts-section {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.06);
+}
+
+.post-header {
+  margin-bottom: 20px;
+}
+
+.post-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.render-info {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.render-info strong {
+  font-size: 18px;
+  color: #172033;
+}
+
+
+/* =========================================
+   POSTS
+========================================= */
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 17px 18px;
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.post-item strong {
+  font-size: 15px;
+}
+
+.post-item p {
+  margin: 6px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+  border: 1px solid #fda29b;
+  background: #fff5f4;
+  color: #b42318;
+  padding: 8px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.delete-btn:hover {
+  background: #fee4e2;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.posts-list > p {
+  margin: 0;
+  padding: 25px;
+  text-align: center;
+  color: #667085;
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+  .schedule-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-button {
+    width: 100%;
+  }
+
+  .render-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .app-container {
+    padding: 20px 15px 40px;
+  }
+
+  .app-header h1 {
+    font-size: 28px;
+  }
+
+  .app-header p {
+    font-size: 14px;
+  }
+
+  .performance-panel,
+  .scheduler-section,
+  .calendar-section,
+  .posts-section {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .performance-panel h2 {
+    font-size: 22px;
+  }
+
+  .optimization-buttons {
+    flex-direction: column;
+  }
+
+  .mode-button {
+    width: 100%;
+  }
+
+  .render-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-form {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-section {
+    overflow-x: auto;
+  }
+
+  .post-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
+}
