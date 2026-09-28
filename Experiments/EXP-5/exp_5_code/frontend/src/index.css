@@ -1,0 +1,433 @@
+/* =========================================================
+   EXPERIMENT 5 — MODERN SOCIAL POST MANAGER UI
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(59, 130, 246, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #f8faff, #eef2ff);
+
+  color: #172033;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   MAIN APPLICATION
+   ========================================================= */
+
+#root > div {
+  width: min(1050px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 55px 0 80px;
+}
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+h1 {
+  position: relative;
+
+  margin: 0;
+  padding: 32px 35px 12px;
+
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+
+  color: #111827;
+
+  background: linear-gradient(
+    135deg,
+    #111827 20%,
+    #4f46e5 60%,
+    #2563eb
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+h1 + p {
+  margin: 0 0 32px;
+  padding: 0 35px 30px;
+
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CREATE / RECENT SECTION
+   ========================================================= */
+
+h2 {
+  margin: 0;
+  padding: 25px 30px 18px;
+
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+
+  color: #172033;
+}
+
+/* =========================================================
+   FORM CONTAINER
+   ========================================================= */
+
+/* Style the area containing the post form */
+h2:first-of-type {
+  margin-top: 5px;
+}
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+  display: block;
+
+  margin: 12px 30px 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #475569;
+}
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+select {
+  display: block;
+
+  width: calc(100% - 60px);
+  margin: 0 30px 22px;
+
+  min-height: 52px;
+  padding: 0 16px;
+
+  border: 1px solid #dbe1ef;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+
+  outline: none;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.04);
+
+  transition: all 0.2s ease;
+}
+
+select:hover {
+  border-color: #a5b4fc;
+}
+
+select:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+textarea {
+  display: block;
+
+  width: calc(100% - 60px);
+  margin: 0 30px;
+
+  min-height: 155px;
+  padding: 17px;
+
+  resize: vertical;
+
+  border: 1px solid #dbe1ef;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #1e293b;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  outline: none;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.04);
+
+  transition: all 0.2s ease;
+}
+
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+textarea:hover {
+  border-color: #a5b4fc;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10),
+    0 8px 25px rgba(79, 70, 229, 0.08);
+}
+
+/* =========================================================
+   WORD COUNTER
+   ========================================================= */
+
+textarea + p {
+  margin: 8px 30px 15px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   ALL MAIN SECTIONS
+   ========================================================= */
+
+h2:first-of-type,
+h2:first-of-type ~ * {
+  position: relative;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  border: none;
+  border-radius: 11px;
+
+  padding: 11px 20px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+/* Publish */
+button[type="submit"] {
+  margin: 5px 30px 30px;
+
+  padding: 12px 28px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4f46e5 55%,
+      #2563eb
+    );
+
+  box-shadow:
+    0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(79, 70, 229, 0.35);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   RECENT POSTS
+   ========================================================= */
+
+h2:nth-of-type(2) {
+  margin-top: 35px;
+}
+
+/* Post-like containers */
+h2:nth-of-type(2) ~ div {
+  position: relative;
+
+  margin: 0 0 18px;
+  padding: 22px 25px;
+
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.06);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+h2:nth-of-type(2) ~ div:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================================================
+   POST BUTTONS
+   ========================================================= */
+
+h2:nth-of-type(2) ~ div button {
+  margin: 10px 5px 0 0;
+}
+
+/* Edit */
+h2:nth-of-type(2) ~ div button:first-of-type {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+h2:nth-of-type(2) ~ div button:first-of-type:hover {
+  background: #e0e7ff;
+}
+
+/* Delete */
+h2:nth-of-type(2) ~ div button:last-of-type {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+h2:nth-of-type(2) ~ div button:last-of-type:hover {
+  background: #ffe4e6;
+}
+
+/* =========================================================
+   POST TEXT
+   ========================================================= */
+
+h2:nth-of-type(2) ~ div p {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  #root > div {
+    width: calc(100% - 24px);
+    padding: 25px 0 50px;
+  }
+
+  h1 {
+    padding: 25px 20px 10px;
+    font-size: 32px;
+  }
+
+  h1 + p {
+    padding: 0 20px 25px;
+  }
+
+  h2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  label {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  select,
+  textarea {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  textarea + p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  button[type="submit"] {
+    margin-left: 20px;
+  }
+
+  h2:nth-of-type(2) ~ div {
+    padding: 18px;
+  }
+}
